@@ -85,7 +85,6 @@ const Projects = () => {
       <div className="content">
         <div className="project-list">
           {projects.map((project, index) => {
-            const fullText = `${project.name} - ${project.description}`;
             const displayText = decodedTexts[index] || " ";
             const [name, ...descParts] = displayText.split(' - ');
             const description = descParts.join(' - ');

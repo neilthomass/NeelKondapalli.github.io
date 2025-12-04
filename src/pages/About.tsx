@@ -59,7 +59,7 @@ const About = () => {
       <Navbar />
       <div className="content">
         <div className="about-text">
-          {paragraphs.map((para, index) => (
+          {paragraphs.map((_, index) => (
             <p key={index}>
               {decodedTexts[index]}
             </p>

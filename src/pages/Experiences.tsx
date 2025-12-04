@@ -80,8 +80,7 @@ const Experiences = () => {
   
       <div className="content">
         <div className="experience-list">
-          {experiences.map((exp, index) => {
-            const fullText = `${exp.company} - ${exp.role}`;
+          {experiences.map((_, index) => {
             const displayText = decodedTexts[index] || " ";
             const [company, ...roleParts] = displayText.split(' - ');
             const role = roleParts.join(' - ');
