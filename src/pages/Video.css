@@ -1,0 +1,17 @@
+
+.video-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    background: black;
+    color: white;
+  }
+  
+  .video-container {
+    transform: scale(0.9); 
+    transform-origin: center;
+    overflow: hidden;
+  }
+  

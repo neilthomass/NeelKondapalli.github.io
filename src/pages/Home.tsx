@@ -1,53 +1,26 @@
+// @ts-nocheck
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
+import AsciiVideo from '../components/rune/AsciiVideo';
 import './Home.css';
 
 const Home = () => {
   const [nameVisible, setNameVisible] = useState(false);
-  const [asciiFrame, setAsciiFrame] = useState(0);
 
   useEffect(() => {
     setTimeout(() => setNameVisible(true), 500);
 
-    const interval = setInterval(() => {
-      setAsciiFrame(prev => (prev + 1) % 4);
-    }, 200);
 
-    return () => clearInterval(interval);
   }, []);
 
-  const asciiArt = [
-    `
-    .  +  .  * .    .
-   * .  .  .  +  .
-  .  *  +  .  . *
- .  .  *  .  +  .
-    `,
-    `
-    *  .  +  . .    *
-   .  +  .  *  .  +
-  +  .  .  +  * .
- .  +  .  .  .  +
-    `,
-    `
-    +  *  .  + .    .
-   .  .  +  .  *  .
-  .  +  *  .  . +
- *  .  .  +  .  .
-    `,
-    `
-    .  .  *  . +    *
-   +  *  .  +  .  .
-  *  .  +  *  . .
- .  .  +  .  *  +
-    `
-  ];
 
   return (
     <div className="home">
       <Navbar />
-      <div className="ascii-art">
-        <pre>{asciiArt[asciiFrame]}</pre>
+      <div className="home-video-container">
+        <div className="home-video-scale">
+          <AsciiVideo framesPath="/earth" />
+        </div>
       </div>
 
       <h1 className={`name ${nameVisible ? 'visible' : ''}`}>

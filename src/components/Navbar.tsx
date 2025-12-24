@@ -30,6 +30,10 @@ const Navbar = () => {
       >
         [PROJECTS]
       </Link>
+      <Link
+        to="/video"
+        className={location.pathname === '/video' ? 'active' : ''}
+      >VIDEO</Link>
     </nav>
   );
 };

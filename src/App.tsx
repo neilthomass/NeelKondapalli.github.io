@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './pages/Home';
 import About from './pages/About';
 import Experiences from './pages/Experiences';
+import VideoPage from './pages/Video';
 import Projects from './pages/Projects';
 import './App.css';
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/experiences" element={<Experiences />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/video" element={<VideoPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
