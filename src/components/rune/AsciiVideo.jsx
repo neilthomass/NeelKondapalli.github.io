@@ -1,3 +1,4 @@
+import "./ascii-video.css";
 import { useEffect, useRef } from "react";
 import { createAsciiPlayer } from "./asciiPlayer";
 
@@ -24,11 +25,7 @@ export default function AsciiVideo({
   return (
     <pre
       ref={preRef}
-      style={{
-        fontFamily: "ui-monospace, monospace",
-        lineHeight: "1.1",
-        whiteSpace: "pre",
-      }}
+      className="ascii-surface"
     />
   );
 }

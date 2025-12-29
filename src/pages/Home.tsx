@@ -17,11 +17,11 @@ const Home = () => {
   return (
     <div className="home">
       <Navbar />
-      <div className="home-video-container">
+      {/* <div className="home-video-container">
         <div className="home-video-scale">
           <AsciiVideo framesPath="/earth" />
         </div>
-      </div>
+      </div> */}
 
       <h1 className={`name ${nameVisible ? 'visible' : ''}`}>
         NEEL KONDAPALLI

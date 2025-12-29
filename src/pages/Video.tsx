@@ -6,8 +6,11 @@ export default function VideoPage() {
   return (
     <div className="video-page">
       <div className="video-container">
-        <AsciiVideo framesPath="/earth" />
+        <div className="ascii-scale">
+          <AsciiVideo framesPath="/saturn" />
+        </div>
       </div>
+      
     </div>
   );
 }

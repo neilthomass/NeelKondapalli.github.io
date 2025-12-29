@@ -5,13 +5,15 @@
     justify-content: center;
     align-items: center; 
     min-height: 100vh;
-    background: black;
-    color: white;
+    background: white;
+    color: black;
   }
   
   .video-container {
-    transform: scale(0.9); 
-    transform-origin: center;
+    position: relative;
     overflow: hidden;
   }
-  
+  .ascii-scale {
+    transform: scale(0.9);   /* adjust freely */
+    transform-origin: center;
+  }
