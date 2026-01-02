@@ -22,7 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-public/misc
-frames.jsonl.gz
-*txt
