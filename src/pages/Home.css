@@ -68,7 +68,6 @@
   bottom: 0;
   left: 0;
   background-color: black;
-  transition: width 0.1s ease;
 }
 
 .list-item a:hover::after {
