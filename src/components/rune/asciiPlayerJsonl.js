@@ -56,28 +56,28 @@ export function createAsciiPlayerJsonl({
     if (preferGzip) {
       try {
         res = await fetch(`${framesPath}/frames.jsonl.gz`);
-
+  
         if (res.ok) {
-          const contentType = res.headers.get('content-type');
+          const encoding = res.headers.get("content-encoding");
+  
+          if (encoding === "gzip") {
 
-          if (contentType && (contentType.includes('application/json') || contentType.includes('text/plain'))) {
+            console.log("[AsciiPlayer] Browser auto-decompressed gzip");
             text = await res.text();
-            console.log('[AsciiPlayer] Server auto-decompressed gzip');
           } else {
 
-            console.log('[AsciiPlayer] Decompressing with pako...');
-            const arrayBuffer = await res.arrayBuffer();
-            const decompressed = pako.inflate(new Uint8Array(arrayBuffer));
+            console.log("[AsciiPlayer] Manual gzip decompress");
+            const buf = await res.arrayBuffer();
+            const decompressed = pako.ungzip(new Uint8Array(buf));
             text = new TextDecoder().decode(decompressed);
-            console.log('[AsciiPlayer] Decompression successful');
           }
         }
       } catch (fetchError) {
         console.warn('[AsciiPlayer] Gzip fetch failed:', fetchError.message);
+        console.warn(fetchError);
         res = null;
       }
     }
-
 
     if (!text) {
       console.log('[AsciiPlayer] Loading uncompressed...');
