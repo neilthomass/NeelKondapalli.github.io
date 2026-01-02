@@ -3,9 +3,8 @@
     white-space: pre;  
     font-family: ui-monospace, monospace;
     line-height: 1.1;
-    font-size: 14px;
+    font-size: 4px;
   
-    /* IMPORTANT */
-    will-change: contents;      /* hint for fast updates */
+    will-change: contents;
   }
   

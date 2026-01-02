@@ -1,78 +1,120 @@
 .home {
   min-height: 100vh;
+  background: white;
+  color: black;
+}
+
+.video-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  position: relative;
+  padding: 2rem 0;
+  max-width: 100%;
   overflow: hidden;
 }
 
-
-.home-video-container {
-  display: flex;
-  justify-content: center;
+.content {
+  max-width:900px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-.home-video-scale {
-  transform: scale(0.4);
-  transform-origin: center top;
-}
-
-
-
-.name {
-  font-family: 'Orbitron', sans-serif;
+.content h1 {
   font-size: 2.5rem;
-  font-weight: 300;
-  letter-spacing: 0.4em;
-  color: white;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.tagline {
+  font-size: 1.1rem;
   margin-bottom: 3rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 2s ease, transform 2s ease;
+  color: #333;
 }
 
-.name.visible {
-  opacity: 1;
-  transform: translateY(0);
+.section {
+  margin-bottom: 3rem;
 }
 
-.social-icons {
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.list {
   display: flex;
-  gap: 3rem;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
-.social-icons a {
-  color: #48cae4;
-  transition: all 0.3s ease;
+.list-item {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: black;
+}
+
+.list-item a {
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+
+.list-item a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transition: width 0.1s ease;
+}
+
+.list-item a:hover::after {
+  width: 100%;
+}
+
+.company {
+  font-weight: 500;
+}
+
+.socials {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 55px;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.social-icons a:hover {
-  color: #b400ff;
-  transform: translateY(-4px) scale(1.1);
+.socials a {
+  color: black;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+.socials a:hover {
+  opacity: 0.7;
 }
 
 @media (max-width: 768px) {
-  .name {
-    font-size: 1.8rem;
+  .video-container {
+    display: none;
   }
 
-  .ascii-art {
+  .content {
+    padding: 1rem;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
     font-size: 1rem;
   }
 
-  .social-icons {
-    gap: 1rem;
+  .section h2 {
+    font-size: 1.5rem;
   }
 
-  .social-icons a {
-    width: 40px;
-    height: 40px;
+  .socials {
+    gap: 1rem;
   }
 }
