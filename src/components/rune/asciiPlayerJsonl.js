@@ -5,6 +5,7 @@ export function createAsciiPlayerJsonl({
   container,
   framesPath,
   preferGzip = true,
+  onReady = null,
 }) {
   let cellSpans = [];
 
@@ -167,6 +168,12 @@ export function createAsciiPlayerJsonl({
       if (span.style.color !== color) {
         span.style.color = color;
       }
+    }
+
+    // Call onReady after first frame is rendered
+    if (frameIndex === 0 && onReady) {
+      onReady();
+      onReady = null; // Only call once
     }
 
     frameIndex = (frameIndex + 1) % frameCount;

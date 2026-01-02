@@ -1,5 +1,5 @@
 import "./ascii-video.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createAsciiPlayerJsonl } from "./asciiPlayerJsonl";
 
 export default function AsciiVideoJsonl({
@@ -7,6 +7,7 @@ export default function AsciiVideoJsonl({
   preferGzip = true,
 }) {
   const preRef = useRef(null);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     if (!preRef.current) return;
@@ -15,6 +16,10 @@ export default function AsciiVideoJsonl({
       container: preRef.current,
       framesPath,
       preferGzip,
+      onReady: () => {
+        // Trigger fade-in after first frame is rendered
+        setIsReady(true);
+      }
     });
 
     player.start();
@@ -28,6 +33,7 @@ export default function AsciiVideoJsonl({
     <pre
       ref={preRef}
       className="ascii-surface"
+      style={{ opacity: isReady ? 1 : 0 }}
     />
   );
 }
