@@ -17,7 +17,6 @@ export default function AsciiVideoJsonl({
       framesPath,
       preferGzip,
       onReady: () => {
-        // Trigger fade-in after first frame is rendered
         setIsReady(true);
       }
     });
