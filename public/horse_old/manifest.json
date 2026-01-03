@@ -1,7 +1,7 @@
 {
-  "cols": 120,
-  "rows": 44,
+  "cols": 90,
+  "rows": 33,
   "channels": 3,
-  "fps": 20,
-  "frame_count": 292
+  "fps": 18,
+  "frame_count": 263
 }
