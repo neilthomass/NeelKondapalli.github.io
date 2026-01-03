@@ -3,7 +3,7 @@
     white-space: pre;
     font-family: ui-monospace, monospace;
     line-height: 1.1;
-    font-size: 11px;
+    font-size: 12px;
     will-change: contents;
     transition: opacity 1s ease-in;
   }
