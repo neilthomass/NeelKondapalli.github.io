@@ -7,4 +7,17 @@
     will-change: contents;
     transition: opacity 1s ease-in;
   }
+
+  /* Responsive font sizing for ASCII art */
+  @media (max-width: 768px) {
+    .ascii-surface {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ascii-surface {
+      font-size: 7px;
+    }
+  }
   

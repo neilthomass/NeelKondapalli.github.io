@@ -45,7 +45,7 @@ export function createAsciiPlayerJsonl({
   }
 
   function hslToString(h, s, l) {
-    return `hsl(${h}, ${s}%, ${l}%)`;
+    return `hsl(${h * 360 / 255}, ${s / 255 * 100}%, ${l / 255 * 100}%)`;
   }
 
   async function loadManifest() {

@@ -1,76 +1,74 @@
 // @ts-nocheck
 import AsciiVideo from '../components/rune/AsciiVideo';
 import AsciiVideoJsonl from '../components/rune/AsciiVideoJsonl';
+import ThemeToggle from '../components/ThemeToggle';
 import './Home.css';
 
 const Home = () => {
   const projects = [
     {
       name: 'rune',
-      description: 'Offline C++ video to ascii art converter with browser interface',
+      description: 'C++ video/image to ascii art converter',
       url: 'https://github.com/NeelKondapalli/rune'
     },
     {
       name: 'sure',
-      description: 'Critize claims on X posts conditioned on prior research',
+      description: 'critize X posts based on prior research',
       url: 'https://github.com/NeelKondapalli/sure'
     },
     {
       name: 'neptune',
-      description: 'Multimodal music gen & editing with Meta MusicGen',
+      description: 'music creation & editing with Meta MusicGen',
       url: 'https://github.com/NeelKondapalli/neptunev1'
     },
     {
       name: 'solar',
-      description: 'Natural language wallet transactions on the Flare Mainnet with Gemini',
+      description: 'agentic wallet interactions on the Flare Mainnet',
       url: 'https://github.com/NeelKondapalli/solarv1'
     },
     {
       name: 'aitokenize',
-      description: 'AI tokenization platform for model monetization',
+      description: 'tokenization platform for model monetization',
       url: 'https://github.com/NeelKondapalli/aitokenize'
     }
   ];
 
   const experiences = [
     {
-      company: 'Cubist Systematic Strategies',
-      role: 'Incoming Quantitative Developer Intern',
+      company: 'cubist systematic strategies',
+      role: 'incoming quantitative developer intern',
       url: 'https://point72.com/cubist/'
     },
     {
-      company: 'Tower Research Capital',
-      role: 'Software Engineer Intern',
+      company: 'tower research capital',
+      role: 'software engineer intern',
       url: 'https://tower-research.com/'
     },
     {
-      company: 'Carbyne',
-      role: 'Technical Consultant',
-      url: 'https://carbyne.com/'
-    },
-    {
-      company: 'Berkeley SkyDeck',
-      role: 'Software Engineer Intern',
+      company: 'berkeley skydeck',
+      role: 'software engineer intern',
       url: 'https://skydeck.berkeley.edu/'
     },
     {
-      company: 'TetraScience',
-      role: 'Machine Learning Intern',
+      company: 'tetrascience',
+      role: 'machine learning intern',
       url: 'https://www.tetrascience.com/'
     },
   ];
 
   return (
     <div className="home">
+      <ThemeToggle />
+      <br/>
       <div className="video-container">
         {/* <AsciiVideo framesPath="/horse" /> */}
         <AsciiVideoJsonl framesPath="/horse" preferGzip={true} />
       </div>
 
       <div className="content">
-        <h1>hi i'm neel kondapalli👋</h1>
+        <h1>hi i'm neel kondapalli</h1>
         <p className="tagline">
-          i'm an eecs student @ berkeley interested in systems and distributed engineering
+          i'm an eecs student @ berkeley interested in infrastructure and distributed systems
         </p>
 
         <section className="section">
