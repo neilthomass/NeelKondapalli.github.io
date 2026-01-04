@@ -62,7 +62,7 @@ const Home = () => {
       <br/>
       <div className="video-container">
         {/* <AsciiVideo framesPath="/horse" /> */}
-        <AsciiVideoJsonl framesPath="/horse" preferGzip={true} />
+        <AsciiVideoJsonl framesPath="/horse_shrinked" preferGzip={true} />
       </div>
 
       <div className="content">
