@@ -58,10 +58,18 @@
   gap: 0.8rem;
 }
 
+.list-item-with-hover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+
 .list-item {
   font-size: 1rem;
   line-height: 1.6;
   color: inherit;
+  flex: 0 0 auto;
 }
 
 .list-item a {
@@ -78,9 +86,28 @@
   bottom: 0;
   left: 0;
   background-color: currentColor;
+  transition: width 0.3s ease;
 }
 
 .list-item a:hover::after {
+  width: 100%;
+}
+
+.ascii-hover-image {
+  position: absolute;
+  right: 100%;
+  margin-right: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 10;
+}
+
+.list-item-with-hover:hover .ascii-hover-image {
+  opacity: 1;
+}
+
+.list-item-with-hover:hover .list-item a::after {
   width: 100%;
 }
 
@@ -102,6 +129,17 @@
 
 .socials a:hover {
   opacity: 0.7;
+}
+
+/* Hide ASCII hover images on medium screens and below */
+@media (max-width: 1024px) {
+  .ascii-hover-image {
+    display: none !important;
+  }
+
+  .list-item-with-hover {
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -127,6 +165,10 @@
 
   .list-item {
     font-size: 0.9rem;
+  }
+
+  .list-item-with-hover {
+    padding-left: 0.5rem;
   }
 
   .socials {
@@ -166,6 +208,10 @@
 
   .list-item {
     font-size: 0.85rem;
+  }
+
+  .list-item-with-hover {
+    padding-left: 1.5rem;
   }
 
   .socials {

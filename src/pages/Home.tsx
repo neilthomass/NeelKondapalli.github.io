@@ -1,6 +1,7 @@
 // @ts-nocheck
 import AsciiVideo from '../components/rune/AsciiVideo';
 import AsciiVideoJsonl from '../components/rune/AsciiVideoJsonl';
+import AsciiImageJsonl from '../components/rune/AsciiImageJsonl';
 import ThemeToggle from '../components/ThemeToggle';
 import './Home.css';
 
@@ -8,7 +9,7 @@ const Home = () => {
   const projects = [
     {
       name: 'rune',
-      description: 'C++ video/image to ascii art converter',
+      description: 'c++ video/image to ascii art converter',
       url: 'https://github.com/NeelKondapalli/rune'
     },
     {
@@ -37,22 +38,34 @@ const Home = () => {
     {
       company: 'cubist systematic strategies',
       role: 'incoming quantitative developer intern',
-      url: 'https://point72.com/cubist/'
+      url: 'https://point72.com/cubist/',
+      asciiPath: '/logos/p72',
+      fontSize: 3.5,
+      offsetX: 0
     },
     {
       company: 'tower research capital',
       role: 'software engineer intern',
-      url: 'https://tower-research.com/'
+      url: 'https://tower-research.com/',
+      asciiPath: '/logos/tower',
+      fontSize: 3.5,
+      offsetX: 0
     },
     {
       company: 'berkeley skydeck',
       role: 'software engineer intern',
-      url: 'https://skydeck.berkeley.edu/'
+      url: 'https://skydeck.berkeley.edu/',
+      asciiPath: '/logos/skydeck',
+      fontSize: 4,
+      offsetX: 5
     },
     {
       company: 'tetrascience',
       role: 'machine learning intern',
-      url: 'https://www.tetrascience.com/'
+      url: 'https://www.tetrascience.com/',
+      asciiPath: '/logos/tetra',
+      fontSize: 4.5,
+      offsetX: 0
     },
   ];
 
@@ -75,11 +88,27 @@ const Home = () => {
           <h2>Experience</h2>
           <div className="list">
             {experiences.map((exp, index) => (
-              <div key={index} className="list-item">
-                <a className="company" href={exp.url} target="_blank" rel="noopener noreferrer ">
-                  <span className="company">{exp.company}</span>
-                </a>
-                <span> - {exp.role}</span>
+              <div key={index} className="list-item-with-hover">
+                 {exp.asciiPath && (
+                  <div
+                    className="ascii-hover-image"
+                    style={{
+                      transform: `translateX(${exp.offsetX || 0}px)`
+                    }}
+                  >
+                    <AsciiImageJsonl
+                      framesPath={exp.asciiPath}
+                      preferGzip={true}
+                      fontSize={exp.fontSize}
+                    />
+                  </div>
+                )}
+                <div className="list-item">
+                  <a className="company" href={exp.url} target="_blank" rel="noopener noreferrer ">
+                    <span className="company">{exp.company}</span>
+                  </a>
+                  <span> - {exp.role}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -100,10 +129,10 @@ const Home = () => {
         </section>
 
         <section className="section socials">
-          <a href="mailto:neel2h06@gmail.com">Email</a>
-          <a href="https://x.com/neelkon" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="https://linkedin.com/in/neel-kondapalli" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/NeelKondapalli" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:neel2h06@gmail.com">email</a>
+          <a href="https://x.com/neelkon" target="_blank" rel="noopener noreferrer">x</a>
+          <a href="https://linkedin.com/in/neel-kondapalli" target="_blank" rel="noopener noreferrer">linkedin</a>
+          <a href="https://github.com/NeelKondapalli" target="_blank" rel="noopener noreferrer">github</a>
         </section>
       </div>
     </div>
