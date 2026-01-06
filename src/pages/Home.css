@@ -95,7 +95,7 @@
 
 .ascii-hover-image {
   position: absolute;
-  right: 100%;
+  left: 100%;
   margin-right: 1rem;
   opacity: 0;
   pointer-events: none;

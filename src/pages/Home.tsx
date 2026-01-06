@@ -40,32 +40,32 @@ const Home = () => {
       role: 'incoming quantitative developer intern',
       url: 'https://point72.com/cubist/',
       asciiPath: '/logos/p72',
-      fontSize: 3.5,
-      offsetX: 0
+      fontSize: 6,
+      offsetX: -130
     },
     {
       company: 'tower research capital',
       role: 'software engineer intern',
       url: 'https://tower-research.com/',
       asciiPath: '/logos/tower',
-      fontSize: 3.5,
-      offsetX: 0
+      fontSize: 6,
+      offsetX: -130
     },
     {
       company: 'berkeley skydeck',
       role: 'software engineer intern',
       url: 'https://skydeck.berkeley.edu/',
       asciiPath: '/logos/skydeck',
-      fontSize: 4,
-      offsetX: 5
+      fontSize: 8.5,
+      offsetX: -135
     },
     {
       company: 'tetrascience',
       role: 'machine learning intern',
       url: 'https://www.tetrascience.com/',
       asciiPath: '/logos/tetra',
-      fontSize: 4.5,
-      offsetX: 0
+      fontSize: 8.5,
+      offsetX: -130
     },
   ];
 
