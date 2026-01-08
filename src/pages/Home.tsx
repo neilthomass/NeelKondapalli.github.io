@@ -37,11 +37,11 @@ const Home = () => {
   const experiences = [
     {
       company: 'cubist systematic strategies',
-      role: 'incoming quantitative developer intern',
+      role: 'incoming quant developer intern',
       url: 'https://point72.com/cubist/',
       asciiPath: '/logos/p72',
       fontSize: 6,
-      offsetX: -130
+      offsetX: -245
     },
     {
       company: 'tower research capital',
@@ -49,7 +49,7 @@ const Home = () => {
       url: 'https://tower-research.com/',
       asciiPath: '/logos/tower',
       fontSize: 6,
-      offsetX: -130
+      offsetX: -245
     },
     {
       company: 'berkeley skydeck',
@@ -57,7 +57,7 @@ const Home = () => {
       url: 'https://skydeck.berkeley.edu/',
       asciiPath: '/logos/skydeck',
       fontSize: 8.5,
-      offsetX: -135
+      offsetX: -250
     },
     {
       company: 'tetrascience',
@@ -65,7 +65,7 @@ const Home = () => {
       url: 'https://www.tetrascience.com/',
       asciiPath: '/logos/tetra',
       fontSize: 8.5,
-      offsetX: -130
+      offsetX: -250
     },
   ];
 
@@ -85,7 +85,7 @@ const Home = () => {
         </p>
 
         <section className="section">
-          <h2>Experience</h2>
+          <h2>experience</h2>
           <div className="list">
             {experiences.map((exp, index) => (
               <div key={index} className="list-item-with-hover">
@@ -115,7 +115,7 @@ const Home = () => {
         </section>
 
         <section className="section">
-          <h2>Projects</h2>
+          <h2>projects</h2>
           <div className="list">
             {projects.map((project, index) => (
               <div key={index} className="list-item">
