@@ -180,12 +180,12 @@
   }
 
   .list-item {
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
   }
 
   .list-item-with-hover {
     padding-left: 0;
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
   }
 
   .socials {
@@ -227,12 +227,12 @@
   }
 
   .list-item {
-    font-size: 0.85rem;
+    font-size: 0.85rem !important;
   }
 
   .list-item-with-hover {
     padding-left: 0;
-    font-size: 0.85rem;
+    font-size: 0.85rem !important;
   }
 
   .socials {
