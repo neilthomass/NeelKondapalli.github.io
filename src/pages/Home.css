@@ -71,6 +71,7 @@
   display: flex;
   align-items: center;
   padding-left: 0;
+  font-size: 1rem;
 }
 
 .list-item {
@@ -184,6 +185,7 @@
 
   .list-item-with-hover {
     padding-left: 0;
+    font-size: 0.9rem;
   }
 
   .socials {
@@ -230,6 +232,7 @@
 
   .list-item-with-hover {
     padding-left: 0;
+    font-size: 0.85rem;
   }
 
   .socials {
