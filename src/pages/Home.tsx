@@ -129,7 +129,7 @@ const Home = () => {
         </section>
 
         <section className="section socials">
-          <a href="mailto:neel2h06@gmail.com">email</a>
+          <a href="mailto:neel_kondapalli@berkeley.edu">email</a>
           <a href="https://x.com/neelkon" target="_blank" rel="noopener noreferrer">x</a>
           <a href="https://linkedin.com/in/neel-kondapalli" target="_blank" rel="noopener noreferrer">linkedin</a>
           <a href="https://github.com/NeelKondapalli" target="_blank" rel="noopener noreferrer">github</a>
