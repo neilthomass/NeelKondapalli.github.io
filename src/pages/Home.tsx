@@ -60,7 +60,7 @@ const Home = () => {
       offsetX: -250
     },
     {
-      company: 'Tetrascience',
+      company: 'TetraScience',
       role: 'Machine Learning Intern',
       url: 'https://www.tetrascience.com/',
       asciiPath: '/logos/tetra',
