@@ -5,9 +5,9 @@
 }
 
 :root {
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.5;
-  font-weight: 300;
+  font-weight: 400;
 
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
@@ -21,7 +21,6 @@
   --text-primary: #e0e0e0;
   --text-secondary: #c0c0c0;
 
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -8,60 +8,60 @@ import './Home.css';
 const Home = () => {
   const projects = [
     {
-      name: 'rune',
-      description: 'c++ video/image to ascii art converter',
+      name: 'Rune',
+      description: 'C++ video/image to ascii art converter',
       url: 'https://github.com/NeelKondapalli/rune'
     },
     {
-      name: 'sure',
-      description: 'critize X posts based on prior research',
+      name: 'Sure',
+      description: 'Critize X posts based on prior research',
       url: 'https://github.com/NeelKondapalli/sure'
     },
     {
-      name: 'neptune',
-      description: 'music creation & editing with Meta MusicGen',
+      name: 'Neptune',
+      description: 'Music creation & editing with Meta MusicGen',
       url: 'https://github.com/NeelKondapalli/neptunev1'
     },
     {
-      name: 'solar',
-      description: 'agentic wallet interactions on the Flare Mainnet',
+      name: 'Solar',
+      description: 'Agentic wallet interactions on the Flare Mainnet',
       url: 'https://github.com/NeelKondapalli/solarv1'
     },
     {
-      name: 'aitokenize',
-      description: 'tokenization platform for model monetization',
+      name: 'AITokenize',
+      description: 'Tokenization platform for model monetization',
       url: 'https://github.com/NeelKondapalli/aitokenize'
     }
   ];
 
   const experiences = [
     {
-      company: 'cubist systematic strategies',
-      role: 'incoming quant developer intern',
+      company: 'Cubist Systematic Strategies',
+      role: 'Incoming Quant Developer Intern',
       url: 'https://point72.com/cubist/',
       asciiPath: '/logos/p72',
       fontSize: 6,
       offsetX: -245
     },
     {
-      company: 'tower research capital',
-      role: 'software engineer intern',
+      company: 'Tower Research Capital',
+      role: 'Software Engineer Intern',
       url: 'https://tower-research.com/',
       asciiPath: '/logos/tower',
       fontSize: 6,
       offsetX: -245
     },
     {
-      company: 'berkeley skydeck',
-      role: 'software engineer intern',
+      company: 'Berkeley Skydeck',
+      role: 'Software Engineer Intern',
       url: 'https://skydeck.berkeley.edu/',
       asciiPath: '/logos/skydeck',
       fontSize: 8.5,
       offsetX: -250
     },
     {
-      company: 'tetrascience',
-      role: 'machine learning intern',
+      company: 'Tetrascience',
+      role: 'Machine Learning Intern',
       url: 'https://www.tetrascience.com/',
       asciiPath: '/logos/tetra',
       fontSize: 8.5,
@@ -79,13 +79,14 @@ const Home = () => {
       </div>
 
       <div className="content">
-        <h1>hi i'm neel kondapalli</h1>
+        <h1>Hi, I'm Neel</h1>
         <p className="tagline">
-          i'm an eecs student @ berkeley interested in infrastructure and distributed systems
+          I'm an EECS student at Berkeley interested in high-performance compute, infra, and distributed 
+          systems
         </p>
 
         <section className="section">
-          <h2>experience</h2>
+          <h2>Experience</h2>
           <div className="list">
             {experiences.map((exp, index) => (
               <div key={index} className="list-item-with-hover">
@@ -115,12 +116,12 @@ const Home = () => {
         </section>
 
         <section className="section">
-          <h2>projects</h2>
+          <h2>Projects</h2>
           <div className="list">
             {projects.map((project, index) => (
               <div key={index} className="list-item">
-                <a href={project.url} target="_blank" rel="noopener noreferrer">
-                  {project.name}
+                <a className = "project" href={project.url} target="_blank" rel="noopener noreferrer">
+                <span className="project">{project.name}</span>
                 </a>
                 <span> - {project.description}</span>
               </div>
@@ -129,10 +130,10 @@ const Home = () => {
         </section>
 
         <section className="section socials">
-          <a href="mailto:neel_kondapalli@berkeley.edu">email</a>
-          <a href="https://x.com/neelkon" target="_blank" rel="noopener noreferrer">x</a>
-          <a href="https://linkedin.com/in/neel-kondapalli" target="_blank" rel="noopener noreferrer">linkedin</a>
-          <a href="https://github.com/NeelKondapalli" target="_blank" rel="noopener noreferrer">github</a>
+          <a href="mailto:neel_kondapalli@berkeley.edu">Email</a>
+          <a href="https://x.com/neelkon" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://linkedin.com/in/neel-kondapalli" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/NeelKondapalli" target="_blank" rel="noopener noreferrer">GitHub</a>
         </section>
       </div>
     </div>
