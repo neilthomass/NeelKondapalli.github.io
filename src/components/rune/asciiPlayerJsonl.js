@@ -136,7 +136,7 @@ export function createAsciiPlayerJsonl({
     const parseTime = performance.now() - parseStartTime;
     console.log(`[AsciiPlayer] All frames parsed in ${parseTime.toFixed(0)}ms`);
 
-    // Pre-compute ALL color strings (done once, never allocate again)
+    // Pre-compute all color strings
     console.log('[AsciiPlayer] Pre-computing color strings...');
     const colorStartTime = performance.now();
     colorStrings = new Array(totalCells);
@@ -189,7 +189,7 @@ export function createAsciiPlayerJsonl({
       // Call onReady after first frame is rendered
       if (onReady) {
         onReady();
-        onReady = null; // Only call once
+        onReady = null;
       }
 
       frameIndex = 1;
@@ -209,7 +209,7 @@ export function createAsciiPlayerJsonl({
       const currentGlyph = glyphs[currIdx];
       const previousGlyph = glyphs[prevIdx];
       if (previousGlyph !== currentGlyph) {
-        span.textContent = glyphCache[currentGlyph]; // Use pre-allocated string
+        span.textContent = glyphCache[currentGlyph]; 
       }
 
       // Check color change (byte comparisons against previous frame)

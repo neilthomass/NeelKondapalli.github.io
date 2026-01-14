@@ -24,7 +24,6 @@ export default function AsciiImageJsonl({
         const rows = manifest.rows;
         const cellCount = rows * cols;
 
-        // Load first frame from jsonl.gz
         let text;
         let res;
 
@@ -56,18 +55,16 @@ export default function AsciiImageJsonl({
           res = await fetch(`${framesPath}/frame.jsonl`);
           if (!res.ok) {
             console.warn(`[AsciiImage] Failed to load frames from ${framesPath}`);
-            return; // Silently fail - don't throw error
+            return;
           }
           text = await res.text();
         }
 
-        // Check if text is empty or invalid
         if (!text || text.trim().length === 0) {
           console.warn(`[AsciiImage] Empty file at ${framesPath}`);
           return;
         }
 
-        // Parse only the first line (first frame)
         const firstLine = text.trim().split('\n')[0];
         if (!firstLine) {
           console.warn(`[AsciiImage] No valid frame data in ${framesPath}`);
@@ -76,7 +73,6 @@ export default function AsciiImageJsonl({
 
         const frame = JSON.parse(firstLine);
 
-        // Build DOM structure
         const container = preRef.current;
         container.innerHTML = '';
 
@@ -84,7 +80,6 @@ export default function AsciiImageJsonl({
           const span = document.createElement('span');
           span.textContent = cell.g;
 
-          // Convert HSL values to CSS color
           const h = cell.h || 0;
           const s = cell.s || 0;
           const l = cell.l || 0;
@@ -92,7 +87,6 @@ export default function AsciiImageJsonl({
 
           container.appendChild(span);
 
-          // Add newline after each row
           if ((i + 1) % cols === 0 && i < cellCount) {
             container.appendChild(document.createTextNode('\n'));
           }
@@ -107,7 +101,6 @@ export default function AsciiImageJsonl({
     loadStaticFrame();
   }, [framesPath, preferGzip]);
 
-  // Calculate effective font size
   const effectiveFontSize = fontSize * scale;
 
   return (
