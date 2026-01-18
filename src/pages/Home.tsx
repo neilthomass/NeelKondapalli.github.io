@@ -62,7 +62,7 @@ const Home = () => {
       url: 'https://skydeck.berkeley.edu/',
       asciiPath: '/logos/skydeck',
       fontSize: 6,
-      offsetX: -245,
+      offsetX: -260,
       invertMode: 2
     },
     {
@@ -93,7 +93,7 @@ const Home = () => {
       <div className="content">
         <h1>Hi, I'm Neel</h1>
         <p className="tagline">
-          I'm an EECS student at Berkeley interested in high-performance compute, infra, and distributed 
+          I'm an EECS student at Berkeley interested in performant computing, infrastructure, and distributed 
           systems
         </p>
 
