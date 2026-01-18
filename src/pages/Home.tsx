@@ -56,8 +56,8 @@ const Home = () => {
       role: 'Software Engineer Intern',
       url: 'https://skydeck.berkeley.edu/',
       asciiPath: '/logos/skydeck',
-      fontSize: 8.5,
-      offsetX: -250
+      fontSize: 6,
+      offsetX: -245
     },
     {
       company: 'TetraScience',
@@ -65,7 +65,7 @@ const Home = () => {
       url: 'https://www.tetrascience.com/',
       asciiPath: '/logos/tetra',
       fontSize: 8.5,
-      offsetX: -250
+      offsetX: -245
     },
   ];
 

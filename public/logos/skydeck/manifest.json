@@ -1,6 +1,6 @@
 {
-  "cols": 75,
-  "rows": 8,
+  "cols": 100,
+  "rows": 10,
   "channels": 3,
   "type": "image",
   "fps": 0,
