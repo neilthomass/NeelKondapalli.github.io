@@ -20,4 +20,13 @@
       font-size: 7px;
     }
   }
-  
+
+
+  [data-theme='light'] .ascii-invert-on-light {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+
+  [data-theme='dark'] .ascii-invert-on-dark {
+    filter: invert(1) hue-rotate(180deg);
+  }

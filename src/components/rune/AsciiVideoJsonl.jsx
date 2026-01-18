@@ -5,6 +5,7 @@ import { createAsciiPlayerJsonl } from "./asciiPlayerJsonl";
 export default function AsciiVideoJsonl({
   framesPath,
   preferGzip = true,
+  invertMode = 0,
 }) {
   const preRef = useRef(null);
   const [isReady, setIsReady] = useState(false);
@@ -28,10 +29,17 @@ export default function AsciiVideoJsonl({
     };
   }, [framesPath, preferGzip]);
 
+
+  const getInversionClass = () => {
+    if (invertMode === 1) return "ascii-invert-on-light";
+    if (invertMode === 2) return "ascii-invert-on-dark";
+    return "";
+  };
+
   return (
     <pre
       ref={preRef}
-      className="ascii-surface"
+      className={`ascii-surface ${getInversionClass()}`}
       style={{ opacity: isReady ? 1 : 0 }}
     />
   );

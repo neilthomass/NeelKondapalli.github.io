@@ -6,7 +6,8 @@ export default function AsciiImageJsonl({
   framesPath,
   preferGzip = true,
   fontSize = 13,
-  scale = 1, // 'frames' or 'img'
+  scale = 1,
+  invertMode = 0,
 }) {
   const preRef = useRef(null);
   const [isReady, setIsReady] = useState(false);
@@ -103,10 +104,16 @@ export default function AsciiImageJsonl({
 
   const effectiveFontSize = fontSize * scale;
 
+  const getInversionClass = () => {
+    if (invertMode === 1) return "ascii-invert-on-light";
+    if (invertMode === 2) return "ascii-invert-on-dark";
+    return "";
+  };
+
   return (
     <pre
       ref={preRef}
-      className="ascii-surface"
+      className={`ascii-surface ${getInversionClass()}`}
       style={{
         opacity: isReady ? 1 : 0,
         fontSize: `${effectiveFontSize}px`

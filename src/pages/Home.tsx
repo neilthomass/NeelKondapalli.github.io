@@ -1,11 +1,14 @@
 // @ts-nocheck
+import { useState } from 'react';
 import AsciiVideo from '../components/rune/AsciiVideo';
 import AsciiVideoJsonl from '../components/rune/AsciiVideoJsonl';
 import AsciiImageJsonl from '../components/rune/AsciiImageJsonl';
 import ThemeToggle from '../components/ThemeToggle';
+import InvertModeToggle from '../components/InvertModeToggle';
 import './Home.css';
 
 const Home = () => {
+  const [videoInvertMode, setVideoInvertMode] = useState(2);
   const projects = [
     {
       name: 'Rune',
@@ -41,7 +44,8 @@ const Home = () => {
       url: 'https://point72.com/cubist/',
       asciiPath: '/logos/p72',
       fontSize: 6,
-      offsetX: -245
+      offsetX: -245,
+      invertMode: 2
     },
     {
       company: 'Tower Research Capital',
@@ -49,7 +53,8 @@ const Home = () => {
       url: 'https://tower-research.com/',
       asciiPath: '/logos/tower',
       fontSize: 6,
-      offsetX: -245
+      offsetX: -245,
+      invertMode: 2
     },
     {
       company: 'Berkeley Skydeck',
@@ -57,7 +62,8 @@ const Home = () => {
       url: 'https://skydeck.berkeley.edu/',
       asciiPath: '/logos/skydeck',
       fontSize: 6,
-      offsetX: -245
+      offsetX: -245,
+      invertMode: 2
     },
     {
       company: 'TetraScience',
@@ -65,17 +71,23 @@ const Home = () => {
       url: 'https://www.tetrascience.com/',
       asciiPath: '/logos/tetra',
       fontSize: 8.5,
-      offsetX: -245
+      offsetX: -245,
+      invertMode: 2
     },
   ];
+
+  const handleInvertModeToggle = () => {
+    setVideoInvertMode((prev) => (prev + 1) % 3);
+  };
 
   return (
     <div className="home">
       <ThemeToggle />
+      <InvertModeToggle invertMode={videoInvertMode} onToggle={handleInvertModeToggle} />
       <br/>
       <div className="video-container">
         {/* <AsciiVideo framesPath="/horse" /> */}
-        <AsciiVideoJsonl framesPath="/horse_shrinked" preferGzip={true} />
+        <AsciiVideoJsonl framesPath="/horse_shrinked" preferGzip={true} invertMode={videoInvertMode} />
       </div>
 
       <div className="content">
@@ -101,6 +113,7 @@ const Home = () => {
                       framesPath={exp.asciiPath}
                       preferGzip={true}
                       fontSize={exp.fontSize}
+                      invertMode={exp.invertMode || 0}
                     />
                   </div>
                 )}
