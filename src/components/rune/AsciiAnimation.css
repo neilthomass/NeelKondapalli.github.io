@@ -1,0 +1,51 @@
+.ascii-surface {
+  display: inline-block;
+  white-space: pre;
+  font-family: ui-monospace, monospace;
+  line-height: 1.1;
+  font-size: 13px;
+  will-change: contents;
+  transition: opacity 1s ease-in;
+  margin: 0;
+}
+
+.ascii-surface > div {
+  white-space: pre;
+  height: 1.1em;
+}
+
+.ascii-surface span {
+  display: inline;
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
+/* Grayscale color classes for ASCII characters (dark to light) */
+.c0 { color: transparent; }
+.c1 { color: #1a1a1a; }
+.c2 { color: #333333; }
+.c3 { color: #4d4d4d; }
+.c4 { color: #666666; }
+.c5 { color: #808080; }
+.c6 { color: #999999; }
+.c7 { color: #b3b3b3; }
+.c8 { color: #cccccc; }
+.c9 { color: #ffffff; }
+
+/* Responsive font sizing for ASCII art */
+@media (max-width: 768px) {
+  .ascii-surface {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .ascii-surface {
+    font-size: 7px;
+  }
+}
+
+/* Invert colors on light theme */
+[data-theme='light'] .ascii-surface {
+  filter: invert(1) hue-rotate(180deg);
+}

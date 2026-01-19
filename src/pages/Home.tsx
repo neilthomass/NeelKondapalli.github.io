@@ -1,14 +1,10 @@
 // @ts-nocheck
-import { useState } from 'react';
-import AsciiVideo from '../components/rune/AsciiVideo';
-import AsciiVideoJsonl from '../components/rune/AsciiVideoJsonl';
+import AsciiAnimation from '../components/rune/AsciiAnimation';
 import AsciiImageJsonl from '../components/rune/AsciiImageJsonl';
 import ThemeToggle from '../components/ThemeToggle';
-import InvertModeToggle from '../components/InvertModeToggle';
 import './Home.css';
 
 const Home = () => {
-  const [videoInvertMode, setVideoInvertMode] = useState(2);
   const projects = [
     {
       name: 'Rune',
@@ -76,18 +72,12 @@ const Home = () => {
     },
   ];
 
-  const handleInvertModeToggle = () => {
-    setVideoInvertMode((prev) => (prev + 1) % 3);
-  };
-
   return (
     <div className="home">
       <ThemeToggle />
-      <InvertModeToggle invertMode={videoInvertMode} onToggle={handleInvertModeToggle} />
       <br/>
       <div className="video-container">
-        {/* <AsciiVideo framesPath="/horse" /> */}
-        <AsciiVideoJsonl framesPath="/horse_shrinked" preferGzip={true} invertMode={videoInvertMode} />
+        <AsciiAnimation fps={24} />
       </div>
 
       <div className="content">
