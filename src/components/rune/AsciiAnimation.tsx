@@ -28,7 +28,7 @@ const AsciiAnimation = ({ fps = 24 }: AsciiAnimationProps) => {
     let lineElements: HTMLDivElement[] = [];
 
     const loadFrames = async () => {
-      const response = await fetch('/frames.json.gz');
+      const response = await fetch(`${import.meta.env.BASE_URL}frames.json.gz`);
       const encoding = response.headers.get('content-encoding');
 
       let data: FramesMap;

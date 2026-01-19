@@ -18,7 +18,8 @@ export default function AsciiImageJsonl({
     const loadStaticFrame = async () => {
       try {
         // Load manifest
-        const manifestRes = await fetch(`${framesPath}/manifest.json`);
+        const basePath = `${import.meta.env.BASE_URL}${framesPath.replace(/^\//, '')}`;
+        const manifestRes = await fetch(`${basePath}/manifest.json`);
         const manifest = await manifestRes.json();
 
         const cols = manifest.cols;
@@ -30,7 +31,7 @@ export default function AsciiImageJsonl({
 
         if (preferGzip) {
           try {
-            res = await fetch(`${framesPath}/frame.jsonl.gz`);
+            res = await fetch(`${basePath}/frame.jsonl.gz`);
 
             if (res.ok) {
               const encoding = res.headers.get("content-encoding");
@@ -53,7 +54,7 @@ export default function AsciiImageJsonl({
 
         if (!text) {
           console.log('[AsciiImage] Loading uncompressed...');
-          res = await fetch(`${framesPath}/frame.jsonl`);
+          res = await fetch(`${basePath}/frame.jsonl`);
           if (!res.ok) {
             console.warn(`[AsciiImage] Failed to load frames from ${framesPath}`);
             return;
